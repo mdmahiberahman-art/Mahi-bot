@@ -4,7 +4,7 @@ const axios = require("axios");
 module.exports.config = {
   name: "idea",
   version: "1.0.1",
-  permission: 0,
+  permission: 2,
   credits: "Joy Ahmed",
   description: "Don't mention admin without reason",
   prefix: true,
