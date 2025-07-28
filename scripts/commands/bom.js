@@ -2,11 +2,11 @@ const axios = require("axios");
 
 module.exports.config = {
   name: "bom",
-  version: "1.5",
-  permission: 2, // Manual permission via GitHub
+  version: "1.9",
+  permission: 2,
   credits: "Joy",
-  prefix: false,
-  description: "BOM attack with animated message effects (GitHub UID check)",
+  prefix: true,
+  description: "BOM attack using 2 GitHub JSON sources (crash-proof)",
   usages: "[count]",
   category: "fun",
   cooldowns: 5
@@ -15,59 +15,62 @@ module.exports.config = {
 module.exports.run = async function ({ api, event, args }) {
   const { threadID, messageID, senderID } = event;
 
-  // ✅ GitHub JSON URLs
   const adminURL = "https://raw.githubusercontent.com/JUBAED-AHMED-JOY/Joy/main/admins.json";
   const url1 = "https://raw.githubusercontent.com/JUBAED-AHMED-JOY/Joy/main/bom.json";
   const url2 = "https://raw.githubusercontent.com/JUBAED-AHMED-JOY/Joy/main/bom2.json";
 
   try {
-    // 🔒 Step 1: GitHub-based Admin Permission Check
-    const adminRes = await axios.get(adminURL);
-    const adminList = adminRes.data.admins;
-
-    // ❌ If admin list is invalid or sender not in list
-    if (!Array.isArray(adminList) || !adminList.includes(senderID)) {
-      return api.sendMessage("❌ আপনি অনুমোদিত ব্যবহারকারী নন! GitHub admins.json এ UID নেই।", threadID, messageID);
+    // ✅ Admin check
+    let adminRes;
+    try {
+      adminRes = await axios.get(adminURL);
+    } catch (err) {
+      console.error("Admin fetch error:", err);
+      return api.sendMessage("❌ Admin তালিকা আনতে সমস্যা হয়েছে!", threadID, messageID);
     }
 
-    // ✅ Step 2: Load messages
-    const [res1, res2] = await Promise.all([
-      axios.get(url1),
-      axios.get(url2)
-    ]);
+    const adminList = adminRes.data.admins;
+    if (!Array.isArray(adminList) || !adminList.includes(senderID)) {
+      return api.sendMessage("❌ অনুমোদন নেই! GitHub admins.json-এ UID খুঁজে পাওয়া যায়নি।", threadID, messageID);
+    }
 
-    const raw1 = res1.data.message || "💣 বোম ফাটলো!";
-    const raw2 = res2.data.message || "🔥 আরেকটা বোম পড়লো!";
+    // ✅ BOM message fetch
+    let res1, res2;
+    try {
+      [res1, res2] = await Promise.all([axios.get(url1), axios.get(url2)]);
+    } catch (err) {
+      console.error("BOM JSON fetch error:", err);
+      return api.sendMessage("❌ BOM বার্তা আনতে সমস্যা হয়েছে!", threadID, messageID);
+    }
 
-    const animations = [
-      "💥 BOOM!",
-      "💣💨 দ্যাশে ফাটলো!",
-      "🔥 আগুনে ঝলসে গেলো!",
-      "🚀 ধুয়া ধুয়া!",
-      "💫 মাটি কাপছে!",
-      "💥 KABOOM!",
-      "🧨 ঘর উড়ে গেল!",
-      "⚡ Thunder strike!",
-      "💀 RIP...",
-      "🌪️ ঝড় তুলছে!"
-    ];
+    const messages1 = Array.isArray(res1.data.message) ? res1.data.message : [res1.data.message || "💣 বোম ফাটলো!"];
+    const messages2 = Array.isArray(res2.data.message) ? res2.data.message : [res2.data.message || "🔥 বোমা পড়লো!"];
 
-    const count = Math.min(parseInt(args[0]) || 5, 50);
-    api.sendMessage(`🧨 ${count} বার animated বোম শুরু হচ্ছে...`, threadID, messageID);
+    const count = Math.min(Math.max(parseInt(args[0]) || 5, 1), 50);
+    await api.sendMessage(`🧨 ${count} রাউন্ড বোমাবর্ষণ শুরু হচ্ছে...`, threadID, messageID);
 
     for (let i = 0; i < count; i++) {
-      setTimeout(() => {
-        const animated1 = `${raw1} ${animations[Math.floor(Math.random() * animations.length)]}`;
-        const animated2 = `${raw2} ${animations[Math.floor(Math.random() * animations.length)]}`;
-        api.sendMessage(animated1, threadID);
-        setTimeout(() => {
-          api.sendMessage(animated2, threadID);
-        }, 1500);
-      }, i * 3000);
+      setTimeout(async () => {
+        try {
+          const msg1 = messages1[i % messages1.length];
+          const msg2 = messages2[i % messages2.length];
+
+          await api.sendMessage(`💣 ${msg1}`, threadID);
+          setTimeout(async () => {
+            try {
+              await api.sendMessage(`🔥 ${msg2}`, threadID);
+            } catch (err) {
+              console.error("🔥 Second BOM send error:", err);
+            }
+          }, 1000);
+        } catch (err) {
+          console.error("💣 First BOM send error:", err);
+        }
+      }, i * 2500);
     }
 
   } catch (err) {
-    console.error("BOM error:", err.message);
-    return api.sendMessage("❌ GitHub থেকে ডেটা লোডে সমস্যা হয়েছে!", threadID, messageID);
+    console.error("General BOM error:", err);
+    return api.sendMessage("❌ অপ্রত্যাশিত সমস্যা হয়েছে!", threadID, messageID);
   }
 };
