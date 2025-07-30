@@ -1,39 +1,60 @@
+const axios = require("axios");
+
+const API_CONFIG_URL = "https://raw.githubusercontent.com/JUBAED-AHMED-JOY/Joy/main/api.json";
+
+async function getApiUrl() {
+  try {
+    const res = await axios.get(API_CONFIG_URL);
+    return res.data.api;
+  } catch (e) {
+    console.error("❌ Failed to fetch API URL from GitHub:", e.message);
+    return null;
+  }
+}
+
 module.exports.config = {
-    name: "teach",
-    version: "1.0.2",
-    permission: 0,
-    credits: "ryuko",
-    prefix: false,
-    premium: false,
-    description: "talk teach",
-    category: "without prefix",
-    usages: "your ask - my answer",
-    cooldowns: 0
+  name: "teach",
+  version: "1.0.0",
+  permission: 0,
+  prefix: true,
+  credits: "Joy Ahmed",
+  description: "Teach Joy AI with new replies (using API)",
+  category: "fun",
+  usages: "teach <question> - <answer>",
+  cooldowns: 5,
 };
 
-const axios = require('axios');
+module.exports.run = async function ({ api, event, args }) {
+  const input = args.join(" ").trim();
 
-module.exports.run = async ({ api, event, args }) => {
-    let { messageID, threadID } = event;
-    let work = args.join(" ");
-    let fw = work.indexOf(" - ");
-    let { teach } = global.apiryuko;
-    if (fw == -1) {
-        api.sendMessage(`wrong format\ntry : ${global.config.PREFIX}${this.config.name} (your ask) - (my answer)`,threadID,messageID);
-    } else {
-        let ask = work.slice(0, fw);
-        let answer = work.slice(fw + 3, work.length);
-        if (ask=="") {api.sendMessage("wrong format",threadID,messageID)} else {
-            if (!answer) {api.sendMessage("wrong format",threadID,messageID)} else {
-                    axios.get(encodeURI(`${teach}${ask}&&${answer}`)).then(res => {
-                        if (res.data.reply == "key and value have all cmnr, add the cc"){
-                            api.sendMessage("question, answer already exists",threadID,messageID)} else {
-                                if (res.data.reply == "there's something wrong with cc, i don't know") {api.sendMessage('unknown error.',threadID,messageID)} else {
-                                    api.sendMessage(res.data.reply,threadID,messageID);
-                                }
-                            }
-                    })
-            }
-        }
-    }
-                        }
+  if (!input.includes(" - ")) {
+    return api.sendMessage(
+      "❌ সঠিক ফরম্যাট ব্যবহার করুন:\nteach <question> - <answer>\nউদাহরণ: teach তুমি কে? - আমি জয় বট 🤖",
+      event.threadID,
+      event.messageID
+    );
+  }
+
+  const [question, answer] = input.split(" - ").map(str => str.trim());
+
+  if (!question || !answer) {
+    return api.sendMessage("❌ প্রশ্ন বা উত্তর ফাঁকা রাখা যাবে না!", event.threadID, event.messageID);
+  }
+
+  const apiUrl = await getApiUrl();
+  if (!apiUrl) {
+    return api.sendMessage("❌ API URL পাওয়া যায়নি। পরে আবার চেষ্টা করুন।", event.threadID, event.messageID);
+  }
+
+  try {
+    await axios.get(`${apiUrl}/sim?type=teach&ask=${encodeURIComponent(question)}&ans=${encodeURIComponent(answer)}&senderID=${event.senderID}`);
+    return api.sendMessage(
+      `╭╼|━━━━━━━━━━━━━━|╾╮\n✅ শেখানো হয়েছে!\n❓ প্রশ্ন: ${question}\n💬 উত্তর: ${answer}\n╰╼|━━━━━━━━━━━━━━|╾╯`,
+      event.threadID,
+      event.messageID
+    );
+  } catch (err) {
+    console.error("❌ Teach API error:", err.message);
+    return api.sendMessage("❌ শেখাতে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।", event.threadID, event.messageID);
+  }
+};
