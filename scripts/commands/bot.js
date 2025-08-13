@@ -90,12 +90,12 @@ module.exports.run = async function ({ api, event, args, Users }) {
   }
 
   const fallbackReplies = [
-    "আমি এখন জয় বস এর সাথে বিজি আছি",
+    "আমি এখন সুমন বস এর সাথে বিজি আছি",
     "what are you asking me to do?",
     "I love you baby meye hole chipay aso",
     "Love you 3000-😍💋💝",
-    "ji bolen ki korte pari ami apnar jonno?",
-    "আমাকে না ডেকে আমার বস জয়কে ডাকেন! link: https://www.facebook.com/100001435123762",
+    "ji bolen ki korte pari ami apnar jonno?link: https://www.facebook.com/profile.php?id=61575312276649",
+    "আমাকে না ডেকে আমার বস সুমনকে ডাকেন! link: https://www.facebook.com/profile.php?id=61575312276649",
     "Hmm jan ummah😘😘",
     "তুমি কি আমাকে ডাকলে বন্ধু 🤖?",
     "ভালোবাসি তোমাকে 🤖",
