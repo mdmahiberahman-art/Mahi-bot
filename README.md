@@ -1,12 +1,12 @@
-<h1 align="center">✨ 𝐉𝐎𝐘 𝐀𝐇𝐌𝐄𝐃 ✨</h1>
+<h1 align="center">✨ 𝐒𝐔𝐌𝐎𝐍 𝐊𝐈𝐍𝐆 𝐎𝐅 𝐆𝐀𝐈𝐁𝐀𝐍𝐃𝐇𝐀 ✨</h1>
 
 <p align="center">
-  <img src="https://graph.facebook.com/100001435123762/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662" alt="Joy Ahmed" width="200" style="border-radius:50%;" />
+  <img src="https://graph.facebook.com/61575312276649/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662" alt="SUMON ISLAM" width="200" style="border-radius:50%;" />
 </p>
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=16F737&width=500&lines=Assalam+Walaikum💚;Welcome+to+My+Github+Profile;Follow+Me+For+New+Projects;I'm+Joy+Ahmed+✔+Developer+%26+Bot+Maker💻" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=16F737&width=500&lines=Assalam+Walaikum💚;Welcome+to+My+Github+Profile;Follow+Me+For+New+Projects;I'm+sumon+Ahmed+✔+Developer+%26+Bot+Maker💻" alt="Typing SVG" />
   </a>
 </p>
 
@@ -14,27 +14,27 @@
 
 ## ABOUT ME
 
-name : ```JOY AHMED```  
-age : ```16```  
-link : [facebook](https://www.facebook.com/profile.php?id=100001435123762)  
+name : ```SUMON AHMED```  
+age : ```17```  
+link : [facebook](https://www.facebook.com/profile.php?id=61575312276649)  
 
 ---
 
 ## 🌟 **About Me**  
-- **Name:** 𝑱𝒐𝒚 𝑨𝒉𝒎𝒆𝒅  
-- **Address:** 𝐉𝐚𝐦𝐚𝐥𝐩𝐮𝐫, 𝐁𝐚𝐧𝐠𝐥𝐚𝐝𝐞𝐬𝐡 🇧🇩  
+- **Name:** 𝑺𝒖𝒎𝒐𝒏 𝑨𝒉𝒎𝒆𝒅  
+- **Address:** 𝑫𝒉𝒂𝒌𝒂, 𝐁𝐚𝐧𝐠𝐥𝐚𝐝𝐞𝐬𝐡 🇧🇩  
 
 ---
 
 ## 🌐 **Connect With Me**  
 <p>
-  <a href="https://www.facebook.com/100001435123762">
+  <a href="https://www.facebook.com/61575312276649">
     <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
   </a>
-  <a href="https://wa.me/8801709045888">
+  <a href="https://wa.me/8801975257710">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
-  <a href="https://github.com/JUBAED-AHMED-JOY">
+  <a href="https://github.com/SHOFIQ-AHMED-SUMON">
     <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
@@ -44,7 +44,7 @@ link : [facebook](https://www.facebook.com/profile.php?id=100001435123762)
 ## CREDITS
 
 original file : [BotPack](https://replit.com/@YanMaglinte/BotPack?v=1) by ```YanMaglinte```  
-modified : [JOY-BOT](https://replit.com/@joyahmed404) by ```JOY AHMED```  
+modified : [SUMON-BOT](https://replit.com/@joyahmed404) by ```SUMON AHMED```  
 
 ---
 
