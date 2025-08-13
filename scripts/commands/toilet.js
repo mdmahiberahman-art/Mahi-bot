@@ -1,4 +1,4 @@
-const fs = require("fs-extra");
+ fs = require("fs-extra");
 const axios = require("axios");
 const jimp = require("jimp");
 const path = require("path");
@@ -51,7 +51,7 @@ module.exports = {
 ➤ 💩 লে গু খা, ঠেলা বুঝ!
 ╰╼|━━━━━━━━━━━━━━|╾╯
 
-🪪 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 ━➤ 𝙅𝙤𝙮 𝘼𝙝𝙢𝙚𝙙`;
+🪪 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 ━➤𝐒𝐔𝐌𝐎𝐍 𝐈𝐒𝐋𝐀𝐌 `;
 
     return api.sendMessage({
       body: message,
