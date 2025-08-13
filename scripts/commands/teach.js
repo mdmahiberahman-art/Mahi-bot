@@ -29,7 +29,7 @@ module.exports.run = async function ({ api, event, args }) {
 
   if (!input.includes(" - ")) {
     return api.sendMessage(
-      "❌ সঠিক ফরম্যাট ব্যবহার করুন:\nteach <question> - <answer>\nউদাহরণ: teach তুমি কে? - আমি জয় বট 🤖",
+      "❌ সঠিক ফরম্যাট ব্যবহার করুন:\nteach <question> - <answer>\nউদাহরণ: teach তুমি কে? - আমি সুমন বট 🤖",
       event.threadID,
       event.messageID
     );
