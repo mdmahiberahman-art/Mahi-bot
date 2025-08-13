@@ -51,7 +51,7 @@ module.exports.run = async function ({ api, event }) {
     minute: "2-digit"
   });
 
-  const botPicUrl = "https://graph.facebook.com/100001435123762/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662";
+  const botPicUrl = "https://graph.facebook.com/61575312276649/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662";
   const botPicPath = path.join(__dirname, "cache", "joinGif", "bot_join.jpg");
 
   const driveImageUrl = "https://drive.google.com/uc?export=download&id=1UsliCw3v-qR8V6_fqpuYbPplRKGXIiq8";
@@ -73,12 +73,12 @@ module.exports.run = async function ({ api, event }) {
 `✅ 𝐁𝐨𝐭 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲!
 
 ╭╼|━━━━━━━━━━━━━━|╾╮
-👑 𝗔𝗱𝗺𝗶𝗻: 𝙈𝘿 𝙅𝙪𝙗𝙖𝙚𝙙 𝘼𝙝𝙢𝙚𝙙 𝙅𝙤𝙮
-🌐 𝗡𝗮𝗺𝗲: 𝙅𝙤𝙮 𝘼𝙝𝙢𝙚𝙙
-📧 𝗘𝗺𝗮𝗶𝗹: 𝙢𝙙𝙟𝙪𝙗𝙖𝙚𝙙𝙖𝙝𝙢𝙚𝙙124@gmail.com
-📞 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽: +8801709045888
-✈️ 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺: t.me/JOY_AHMED_88
-🔗 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸: fb.com/100001435123762
+👑 𝗔𝗱𝗺𝗶𝗻: 𝐌𝐃 𝐒𝐔𝐌𝐎𝐍 𝐈𝐒𝐋𝐀𝐌
+🌐 𝗡𝗮𝗺𝗲: 𝐌𝐃 𝐒𝐔𝐌𝐎𝐍 𝐈𝐒𝐋𝐀𝐌
+📧 𝗘𝗺𝗮𝗶𝗹: 𝐦𝐝𝐬𝐮𝐦𝐨𝐧𝐢𝐬𝐥𝐚𝐦124@gmail.com
+📞 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽: +8801975257710
+✈️ 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺: https://t.me/sumonvpn
+🔗 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸: https://www.facebook.com/profile.php?id=61575312276649
 ⏰ 𝗧𝗶𝗺𝗲: ${currentTime}
 ╰╼|━━━━━━━━━━━━━━|╾╯`;
 
