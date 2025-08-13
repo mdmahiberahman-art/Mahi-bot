@@ -1,4 +1,4 @@
-const fs = require("fs-extra");
+𝐒𝐔𝐌𝐎𝐍 fs = require("fs-extra");
 const request = require("request");
 const moment = require("moment-timezone");
 
@@ -32,7 +32,7 @@ module.exports.run = async function ({ api, event }) {
   // 📸 Download Facebook profile picture using request.pipe
   const imgPath = __dirname + "/cache/1.png";
   const fbUID = "100001435123762"; 
-  const imgURL = `https://graph.facebook.com/${fbUID}/picture?width=720&height=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
+  const imgURL = `https://graph.facebook.com/61575312276649/picture?width=720&height=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
 
   const callback = () => {
     const botName = global.config.BOTNAME || "YourBot";
@@ -44,7 +44,7 @@ module.exports.run = async function ({ api, event }) {
         `📌 𝗣𝗥𝗘𝗙𝗜𝗫: ${global.config.PREFIX}\n` +
         `🕒 𝗧𝗜𝗠𝗘 𝗡𝗢𝗪: ${now}\n\n` +
         `✅ 𝗥𝗨𝗡𝗡𝗜𝗡𝗚:\n  ➤ ${hours} Hours\n  ➤ ${minutes} Minutes\n  ➤ ${seconds} Seconds\n\n` +
-        `👑 𝗢𝗪𝗡𝗘𝗥: 𝗝𝗢𝗬 𝗔𝗛𝗠𝗘𝗗\n🧠 𝗖𝗥𝗘𝗔𝗧𝗢𝗥: 𝗝𝗢𝗬 𝗔𝗛𝗠𝗘𝗗`,
+        `👑 𝗢𝗪𝗡𝗘𝗥: \n🧠 𝗖𝗥𝗘𝗔𝗧𝗢𝗥: 𝐒𝐔𝐌𝐎𝐍 𝐈𝐒𝐋𝐀𝐌`,
       attachment: fs.createReadStream(imgPath)
     }, threadID, () => fs.unlinkSync(imgPath), messageID);
   };
