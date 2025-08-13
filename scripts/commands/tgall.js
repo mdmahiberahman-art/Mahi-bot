@@ -24,7 +24,7 @@ module.exports.run = async function({ api, event, args }) {
     }
   }
 
-  const message = args.join(" ") || "JOY AHMED";
+  const message = args.join(" ") || "𝐒𝐮𝐦𝐨𝐧 𝐁𝐨𝐬𝐬 𝐊𝐞 𝐈 𝐋𝐨𝐯𝐞 𝐘𝐨𝐮 𝐁𝐨𝐥𝐨";
 
   return api.sendMessage({
     body: message,
