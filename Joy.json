@@ -1,5 +1,5 @@
 {
-  "author": "JOY",
+  "author": "Sumon",
   "autoRestart": true,
   "accpetPending": false,
   "developermode": false,
@@ -10,7 +10,7 @@
   "banMsg": false,
   "adminOnlyMsg": false,
   "BOTNAME": "𝐒𝐔𝐌𝐎𝐍_B𝐎𝐓",
-  "PREFIX": ".",
+  "PREFIX": "/",
   "react": "☠️",
   "OPERATOR": [
     "",
