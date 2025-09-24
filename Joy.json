@@ -9,15 +9,15 @@
   "saveState": true,
   "banMsg": false,
   "adminOnlyMsg": false,
-  "BOTNAME": "Joy-bot",
+  "BOTNAME": "MaHi-bot",
   "PREFIX": ".",
   "react": "☠️",
   "OPERATOR": [
     "",
-    "100001435123762"
+    "100053532276127"
   ],
   "ADMINBOT": [
-    "100001435123762",
+    "100053532276127",
     ""
   ],
   "OWNER": ["100001435123762"], 
